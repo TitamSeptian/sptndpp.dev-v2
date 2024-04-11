@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa6';
 import Button from '../button';
 import Card from '../card';
+import { me } from '@/config/me';
 
 export default function Contact() {
     return (
@@ -19,7 +20,7 @@ export default function Contact() {
                 <Button
                     as={Link}
                     className='cancel-drag px-4 py-2'
-                    href='mailto:maulanaajk@gmail.com'
+                    href={`mailto:${me.email}`}
                     target='_blank'
                     rel='noreferrer'>
                     <FaArrowRight className='-rotate-45 transition-transform duration-300 group-hover:rotate-0' />

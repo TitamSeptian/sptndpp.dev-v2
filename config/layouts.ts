@@ -3,7 +3,7 @@ import Contact from '@/components/grid/contact';
 import Description from '@/components/grid/description';
 import Github from '@/components/grid/github';
 import LinkedIn from '@/components/grid/linkedin';
-import Location from '@/components/grid/location';
+import Valorant from '@/components/grid/valorant';
 import ProjectOne from '@/components/grid/project-one';
 import ProjectThree from '@/components/grid/project-three';
 import ProjectTwo from '@/components/grid/project-two';
@@ -17,7 +17,7 @@ interface GridItem {
 
 export const gridItems: GridItem[] = [
     { i: 'description', component: Description },
-    { i: 'location', component: Location },
+    { i: 'valorant', component: Valorant },
     { i: 'project-1', component: ProjectOne },
     { i: 'linkedin', component: LinkedIn },
     { i: 'github', component: Github },
@@ -30,7 +30,7 @@ export const gridItems: GridItem[] = [
 
 export const lgLayout: Layout[] = [
     { i: 'description', x: 0, y: 0, w: 2, h: 1 },
-    { i: 'location', x: 2, y: 0, w: 1, h: 1 },
+    { i: 'valorant', x: 2, y: 0, w: 1, h: 1 },
     { i: 'project-1', x: 3, y: 0, w: 1, h: 2 },
     { i: 'spotify', x: 0, y: 1, w: 1, h: 1 },
     { i: 'linkedin', x: 1, y: 1, w: 1, h: 1 },
@@ -43,7 +43,7 @@ export const lgLayout: Layout[] = [
 
 export const mdLayout: Layout[] = [
     { i: 'description', x: 0, y: 0, w: 2, h: 2 },
-    { i: 'location', x: 2, y: 0, w: 2, h: 1 },
+    { i: 'valorant', x: 2, y: 0, w: 2, h: 1 },
     { i: 'linkedin', x: 2, y: 1, w: 1, h: 1 },
     { i: 'project-1', x: 3, y: 1, w: 1, h: 2 },
     { i: 'project-2', x: 2, y: 2, w: 1, h: 2 },
@@ -56,7 +56,7 @@ export const mdLayout: Layout[] = [
 
 export const smLayout: Layout[] = [
     { i: 'description', x: 0, y: 0, w: 2, h: 2 },
-    { i: 'location', x: 0, y: 2, w: 2, h: 1 },
+    { i: 'valorant', x: 0, y: 2, w: 2, h: 1 },
     { i: 'linkedin', x: 0, y: 3, w: 1, h: 1 },
     { i: 'project-1', x: 1, y: 3, w: 1, h: 2 },
     { i: 'project-2', x: 0, y: 4, w: 1, h: 2 },

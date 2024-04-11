@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaSpotify } from 'react-icons/fa6';
+import { SiValorant } from "react-icons/si";
 import Card from '../card';
 import {me} from '@/config/me';
 
@@ -18,13 +18,8 @@ function NowPlaying() {
     return (
         <div>
             <div className='flex items-center gap-2'>
-                <div className='inline-flex items-center justify-center gap-1'>
-                    <div className='w-1 animate-[playing_0.85s_ease_infinite] rounded-full bg-[#1DB954]' />
-                    <div className='w-1 animate-[playing_1.26s_ease_infinite] rounded-full bg-[#1DB954]' />
-                    <div className='w-1 animate-[playing_0.62s_ease_infinite] rounded-full bg-[#1DB954]' />
-                </div>
-                <p className='text-sm'>
-                    {'Offline. Last Played'}
+                <p className='text-xs font-semibold'>
+                    {'VALORANT'}
                 </p>
             </div>
             <Link
@@ -33,10 +28,10 @@ function NowPlaying() {
                 target='_blank'
                 rel='nofollow noopener noreferrer'>
                 <h2 className='line-clamp-3 text-2xl font-semibold'>
-                    {me.spotifyArtist}
+                    {me.valorant}
                 </h2>
             </Link>
-            <p>{me.spotifySong}</p>
+            <p className='text-xs'>in game name</p>
         </div>
     )
 }
@@ -44,7 +39,7 @@ function NowPlaying() {
 export default function Spotify() {
     return (
         <Card className='flex h-full flex-col justify-between gap-3 p-6 md:px-10 md:py-6'>
-            <FaSpotify size='3.5rem' color='#1DB954' />
+            <SiValorant size='3.5rem' color='#fa4454' />
             <NowPlaying />
         </Card>
     );

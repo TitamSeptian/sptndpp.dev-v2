@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FaArrowRight, FaLinkedin } from 'react-icons/fa6';
 import Button from '../button';
 import Card from '../card';
+import {me} from '@/config/me';
 
 export default function LinkedIn() {
     return (
@@ -10,7 +11,7 @@ export default function LinkedIn() {
                 <Button
                     as={Link}
                     className='cancel-drag'
-                    href='https://linkedin.com/in/maulana-ahmad'
+                    href={me.linkedin}
                     target='_blank'>
                     <FaArrowRight className='-rotate-45 transition-transform duration-300 group-hover:rotate-0' />
                     <span className='sr-only'>LinkedIn</span>

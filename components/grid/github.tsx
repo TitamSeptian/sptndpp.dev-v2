@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FaArrowRight, FaGithub } from 'react-icons/fa6';
 import Button from '../button';
 import Card from '../card';
+import { me } from '@/config/me';
 
 export default function Github() {
     return (
@@ -10,7 +11,7 @@ export default function Github() {
                 <Button
                     as={Link}
                     className='cancel-drag'
-                    href='https://github.com/bymaul/'
+                    href={me.github}
                     target='_blank'>
                     <FaArrowRight className='-rotate-45 transition-transform duration-300 group-hover:rotate-0' />
                     <span className='sr-only'>Github</span>

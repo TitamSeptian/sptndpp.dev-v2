@@ -1,6 +1,7 @@
 import profile from '@/public/images/profile.jpg';
 import Image from 'next/image';
 import Card from '../card';
+import { me } from '@/config/me';
 
 export default function Description() {
     return (
@@ -8,7 +9,7 @@ export default function Description() {
             <div className='relative size-14 overflow-hidden rounded-full sm:size-16'>
                 <Image
                     src={profile}
-                    alt='Maulana Ahmad Aji Triadi'
+                    alt={me.name}
                     fill
                     sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                     placeholder='blur'
@@ -16,9 +17,7 @@ export default function Description() {
                 />
             </div>
             <p className='leading-relaxed'>
-                I&apos;m <span className='text-xl font-semibold'>Maulana</span>,
-                a web developer from Yogyakarta, Indonesia. I&apos;m interested
-                in Laravel, Go, Node, and React.
+                I&apos;m <span className='text-xl font-semibold'>{me.alias}</span>, {me.description}
             </p>
         </Card>
     );

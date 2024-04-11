@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useLayoutEffect, useState } from 'react';
 import Container from '../container';
+import {me} from '@/config/me';
 
 export default function FooterLayout() {
     const [isMounted, setIsMounted] = useState(false);
@@ -17,10 +18,10 @@ export default function FooterLayout() {
                 <p className='text-center text-sm'>
                     Crafted by{' '}
                     <Link
-                        href={'https://github.com/bymaul/'}
+                        href={me.github}
                         target='_blank'
                         className='font-semibold'>
-                        Maulana
+                        {me.alias}
                     </Link>
                 </p>
             </Container>

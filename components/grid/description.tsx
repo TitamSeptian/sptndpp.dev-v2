@@ -5,7 +5,7 @@ import { me } from '@/config/me';
 
 export default function Description() {
     return (
-        <Card className='flex flex-col justify-center gap-4 p-6 md:px-10 md:py-6'>
+        <Card className='flex flex-col justify-center gap-4 p-8'>
             <div className='relative size-14 overflow-hidden rounded-full sm:size-16'>
                 <Image
                     src={profile}

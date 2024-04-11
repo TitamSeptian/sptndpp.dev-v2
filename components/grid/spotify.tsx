@@ -43,7 +43,7 @@ function NowPlaying() {
 
 export default function Spotify() {
     return (
-        <Card className='flex h-full flex-col justify-between gap-3 p-6 md:px-10 md:py-6'>
+        <Card className='flex h-full flex-col justify-between gap-3 p-8'>
             <FaSpotify size='3.5rem' color='#1DB954' />
             <NowPlaying />
         </Card>

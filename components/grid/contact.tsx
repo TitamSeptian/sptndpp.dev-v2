@@ -12,9 +12,7 @@ export default function Contact() {
                 Have an interesting project in mind? 👋
             </h2>
             <p className='leading-relaxed max-md:hidden'>
-                If you have a project that you want to get started, think you
-                need my help with something or just fancy saying hey, then get
-                in touch.
+                Got a project idea you&apos;re excited about? Need a hand with something? Or just want to say hello? I&apos;d love to hear from you! Reach out and let&apos;s chat.
             </p>
             <div className='inline-flex flex-col items-center gap-6 lg:flex-row'>
                 <Button

@@ -1,11 +1,27 @@
+import { useState } from 'react';
 import projectImage from '@/public/projects/next-blog-starter.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa6';
 import Button from '../button';
 import Card from '../card';
+import { Client } from '@notionhq/client';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+export const getServerSideProps: GetServerSideProps = async () => {
+    const notion = new Client({ auth: process.env.NOTION_SECRET_KEY });
 
+    let pageId = 'ffaf0cda2ca54fc7bde9e0541f0ed8fb'; // replace with your page id
+
+    try {
+        const res = await notion.pages.retrieve({ page_id: pageId });
+        return { props: { response: res } };
+    } catch (err) {
+        console.error(err);
+        return { props: { response: {} } };
+    }
+};
 export default function ProjectOne() {
+    
     return (
         <Card className='group relative bg-red-100 dark:bg-red-100'>
             <Image

@@ -1,11 +1,11 @@
-import Article from '@/components/grid/article';
+// import Article from '@/components/grid/article';
 import Contact from '@/components/grid/contact';
 import Description from '@/components/grid/description';
 import LinkedIn from '@/components/grid/linkedin';
 import Valorant from '@/components/grid/valorant';
-import ProjectOne from '@/components/grid/project-one';
-import ProjectThree from '@/components/grid/project-three';
-import ProjectTwo from '@/components/grid/project-two';
+// import ProjectOne from '@/components/grid/project-one';
+// import ProjectThree from '@/components/grid/project-three';
+// import ProjectTwo from '@/components/grid/project-two';
 import Spotify from '@/components/grid/spotify';
 import Theme from '@/components/grid/theme';
 import { Layout } from 'react-grid-layout';
@@ -18,13 +18,13 @@ interface GridItem {
 export const gridItems: GridItem[] = [
     { i: 'description', component: Description },
     { i: 'valorant', component: Valorant },
-    { i: 'project-1', component: ProjectOne },
+    // { i: 'project-1', component: ProjectOne },
     { i: 'linkedin', component: LinkedIn },
     { i: 'theme', component: Theme },
-    { i: 'project-2', component: ProjectTwo },
+    // { i: 'project-2', component: ProjectTwo },
     { i: 'spotify', component: Spotify },
-    { i: 'project-3', component: ProjectThree },
-    { i: 'article', component: Article },
+    // { i: 'project-3', component: ProjectThree },
+    // { i: 'article', component: Article },
     { i: 'contact', component: Contact },
 ];
 

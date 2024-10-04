@@ -1,6 +1,6 @@
 export const siteConfig = {
-    title: 'Septian Dwi Putra Pradipta — Web Engineer with DevOps Experience',
-    description: 'I am a web developer based in Bandung, Indonesia.',
-    url: 'https://pradipta.vercel.app',
-    image: 'https://pradipta.vercel.app/images/profile.jpg',
+    title: 'Septian Dwi Putra Pradipta — DevOps Engineer',
+    description: 'Passionate DevOps Engineer based in Bandung, Indonesia, specializing in creating efficient, scalable, and reliable systems.',
+    url: 'https://sptndpp.me',
+    image: 'https://sptndpp.me/images/profile.jpg',
 };

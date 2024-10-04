@@ -1,8 +1,8 @@
 export const me = {
   name: 'Septian Dwi Putra Pradipta',
-  title: 'Web Engineer with DevOps Experience',
+  title: 'DevOps Maestro',
   alias: 'Pradipta',
-  description: 'a DevOps based on Indonesia',
+  description: 'A passionate DevOps engineer from Indonesia, dedicated to optimizing and automating workflows.',
   spotifyTrack: 'https://open.spotify.com/intl-id/track/0SccFtYdj75y6lL2OW10Cf?si=d5cd48f34b1e4164',
   spotifySong: 'Steal The Show',
   spotifyArtist: 'Lauv',

@@ -151,7 +151,7 @@ export default function PostPage({ searchParams } : { searchParams: SearchParams
 
                 <p className="mb-2">Untuk, <span className='font-bold'> {invite ?? 'Anda'}</span></p>
                 <p className="mb-2">Bismillahirrahmanirrahim</p>
-                <p className="mb-2">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                <p className="mb-2">Assalamu&apos;alaikum Warahmatullahi Wabarakatuh</p>
 
                 <p className="mb-4">
                     Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Tasyakuran Khitan putra kami:
@@ -191,7 +191,7 @@ export default function PostPage({ searchParams } : { searchParams: SearchParams
 
                 <p className="mb-2">Atas kehadiran dan doa restunya, kami ucapkan terima kasih.</p>
 
-                <p className="mb-2">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                <p className="mb-2">Wassalamu&apos;alaikum Warahmatullahi Wabarakatuh</p>
 
                 <p className="mt-4">Hormat Kami,</p>
                 <p>Keluarga {post.metadata.name}</p>

@@ -95,12 +95,12 @@ export const generateMetadata = ({ params }: PostProps) => {
             publishedTime: date,
             url: `${siteConfig.url}`,
             authors: siteConfig.nickname,
-            images: '/aa/aa (8).jpg',
+            images: "https://sptndpp.me/images/aa.jpg",
         },
         twitter: {
             title,
             description,
-            images: '/aa/aa (8).jpg',
+            images: "https://sptndpp.me/images/aa.jpg",
         },
         alternates: {
             canonical: `${siteConfig.url}/AsshauqiRayyanza`,

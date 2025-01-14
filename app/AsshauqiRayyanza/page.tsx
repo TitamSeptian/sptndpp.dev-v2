@@ -95,15 +95,15 @@ export const generateMetadata = ({ params }: PostProps) => {
             publishedTime: date,
             url: `${siteConfig.url}`,
             authors: siteConfig.nickname,
-            images: siteConfig.image,
+            images: '/aa/aa (8).jpg',
         },
         twitter: {
             title,
             description,
-            images: siteConfig.image,
+            images: '/aa/aa (8).jpg',
         },
         alternates: {
-            canonical: `${siteConfig.url}`,
+            canonical: `${siteConfig.url}/AsshauqiRayyanza`,
         },
     };
 };

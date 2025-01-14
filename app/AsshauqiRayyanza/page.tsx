@@ -114,7 +114,8 @@ interface SearchParams {
 
 export default function PostPage({ searchParams } : { searchParams: SearchParams }) {
     const { invite } = searchParams as { invite: string | undefined };
-    console.log("Server-side inviteName:", invite);
+    const name = invite?.replace(/\+/g, ' ');
+    
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -149,7 +150,7 @@ export default function PostPage({ searchParams } : { searchParams: SearchParams
             <section className='prose px-4 py-8 dark:prose-invert'>
                 <h1 className="text-3xl font-bold mb-4">Tasyakuran Khitan Asshauqi Rayyanza</h1>
 
-                <p className="mb-2">Untuk, <span className='font-bold'> {invite ?? 'Anda'}</span></p>
+                <p className="mb-2">Untuk, <span className='font-bold'> {name ?? 'Anda'}</span></p>
                 <p className="mb-2">Bismillahirrahmanirrahim</p>
                 <p className="mb-2">Assalamu&apos;alaikum Warahmatullahi Wabarakatuh</p>
 

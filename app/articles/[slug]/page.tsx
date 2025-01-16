@@ -1,69 +1,67 @@
 import Button from '@/components/button';
 import Card from '@/components/card';
 import Container from '@/components/container';
-import GridLayout from '@/components/layout/grid-layout';
 import { CustomMDX } from '@/components/mdx';
-import { lgLayout, smLayout } from '@/config/projectLayouts';
 import { siteConfig } from '@/config/site';
-import { getAllProjects } from '@/lib/mdx';
+import { getArticles } from '@/lib/getArticles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { FaArrowRight, FaX } from 'react-icons/fa6';
 
-interface ProjectProps {
+interface ArticleProps {
     params: { slug: string };
 }
 
 export const generateStaticParams = async () =>
-    getAllProjects().map((project) => ({ slug: project.slug }));
+    getArticles().map((article) => ({ slug: article.slug }));
 
-export const generateMetadata = ({ params }: ProjectProps) => {
-    const project = getAllProjects().find(
-        (project) => project.slug === params.slug
+export const generateMetadata = ({ params }: ArticleProps) => {
+    const article = getArticles().find(
+        (article) => article.slug === params.slug
     );
-    if (!project) return;
+    if (!article) return;
 
-    const { title, description } = project.metadata;
+    const { title, description } = article;
 
     return {
-        title: `${title} — Projects`,
+        title: `${title} — Articles`,
         description,
         openGraph: {
             title,
             description,
             type: 'article',
-            url: `${siteConfig.url}/projects/${project.slug}`,
-            authors: 'Maulana',
-            images: siteConfig.image,
+            url: `${siteConfig.url}/articles/${article.slug}`,
+            authors: siteConfig.nickname,
+            images: article.cover,
         },
         twitter: {
             title,
             description,
-            images: siteConfig.image,
+            images: article.cover,
         },
         alternates: {
-            canonical: `${siteConfig.url}/projects/${project.slug}`,
+            canonical: `${siteConfig.url}/articles/${article.slug}`,
         },
     };
 };
 
-const ProjectPage = ({ params }: ProjectProps) => {
-    const project = getAllProjects().find(
-        (project) => project.slug === params.slug
+const ArticlePage = ({ params }: ArticleProps) => {
+    const article = getArticles().find(
+        (article) => article.slug === params.slug
     );
 
-    if (!project) notFound();
+    if (!article) notFound();
 
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline: project.metadata.title,
-        description: project.metadata.description,
+        headline: article.title,
+        description: article.description,
         author: [
             {
                 '@type': 'Person',
-                name: 'Maulana',
+                name: siteConfig.nickname,
                 url: siteConfig.url,
             },
         ],
@@ -85,16 +83,27 @@ const ProjectPage = ({ params }: ProjectProps) => {
                     type='application/ld+json'
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
+                <Card className='group relative bg-red-100 dark:bg-red-100'>
+                    <Image
+                        src={article.cover}
+                        alt='next-blog-starter'
+                        fill
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                        className='object-cover'
+                        // placeholder='blur'
+                        priority
+                    />
+                </Card>
                 <h1 className='text-3xl font-bold leading-relaxed'>
-                    {project.metadata.title}
+                    {article.title} ~~
                 </h1>
                 <div className='grid grid-cols-2 gap-10 pb-8 max-md:grid-cols-1'>
                     <div>
                         <p className='text-xl font-medium leading-relaxed'>
-                            {project.metadata.description}
+                            {article.description}
                         </p>
                         <div className='flex flex-wrap items-center gap-3 pt-4'>
-                            {JSON.parse(project.metadata.links).map(
+                            {article.links.map(
                                 (link: { url: string; name: string }) => (
                                     <Button
                                         key={link.url}
@@ -111,11 +120,11 @@ const ProjectPage = ({ params }: ProjectProps) => {
                         </div>
                     </div>
                     <article className='prose dark:prose-invert'>
-                        <CustomMDX source={project.content} />
+                        <CustomMDX source={article.content} />
                     </article>
                 </div>
             </Container>
-            {project.metadata.images && (
+            {/* {project.metadata.images && (
                 <GridLayout
                     lgLayout={lgLayout}
                     mdLayout={lgLayout}
@@ -137,9 +146,9 @@ const ProjectPage = ({ params }: ProjectProps) => {
                         )
                     )}
                 </GridLayout>
-            )}
+            )} */}
         </>
     );
 };
 
-export default ProjectPage;
+export default ArticlePage;

@@ -27,3 +27,7 @@ div[mapboxgl-children] {
 .prose *:hover > .anchor {
     @apply visible;
 }
+
+/** {*/
+/*    border: 1px solid red;*/
+/*}*/

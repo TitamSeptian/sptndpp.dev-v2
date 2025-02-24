@@ -17,21 +17,22 @@ interface Spotify {
 function NowPlaying() {
     return (
         <div>
-            <div className='flex items-center gap-2'>
-                <p className='text-xs font-semibold'>
-                    {'VALORANT'}
-                </p>
+            <div className='flex items-center gap-2 text-wrap max-w-3xs'>
+              <p className="text-xs font-semibold">
+                {'VALORANT'} <span className="text-xss font-normal">in game name</span>
+              </p>
             </div>
-            <Link
-                className='cancel-drag'
-                href={me.spotifyTrack}
+          <Link
+              className='cancel-drag '
+                href={'https://playvalorant.com'}
                 target='_blank'
                 rel='nofollow noopener noreferrer'>
-                <h2 className='line-clamp-3 text-2xl font-semibold'>
+                <h2 className='line-clamp-3 text-3xl font-semibold'>
                     {me.valorant}
                 </h2>
             </Link>
-            <p className='text-xs'>in game name</p>
+            <p className='text-xs'>#{me.valorantTag}</p>
+
         </div>
     )
 }

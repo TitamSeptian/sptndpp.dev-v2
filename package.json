@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/mdx": "^15.1.4",
     "@notionhq/client": "^2.2.15",
+    "caniuse-lite": "^1.0.30001700",
     "clsx": "^2.1.0",
     "gray-matter": "^4.0.3",
     "lqip-modern": "^2.2.1",

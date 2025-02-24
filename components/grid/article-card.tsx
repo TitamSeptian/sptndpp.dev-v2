@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa6';
 import Button from '../button';
 import Card from '../card';
-import { IArticle } from '@/lib/getArticles';
+import { IArticle } from '@/lib/ArticleServices';
 
 export default function ArticleCard(article : IArticle) {
 

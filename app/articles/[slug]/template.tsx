@@ -13,10 +13,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
     return (
         <main
             className={cn(
-                isMounted
-                    ? 'translate-y-0 opacity-100'
-                    : 'translate-y-12 opacity-0',
-                'transition-all duration-500'
+                isMounted ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0',
+                'transition-[opacity,_transform] duration-700',
             )}>
             {children}
         </main>

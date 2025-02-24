@@ -53,7 +53,7 @@ function createHeading(level: number) {
                 createElement('a', {
                     href: `#${slug}`,
                     key: `link-${slug}`,
-                    className: 'anchor',
+                    className: 'anchor max-w-fit',
                 }),
             ],
             children

@@ -11,10 +11,11 @@ export interface IArticle {
   cover: string;
   links: { name: string; url: string }[];
   date?: string;
-  content: string; // Added content field
+  content: string;
+	gallery: { src: string; alt: string; title: string; }[];
 }
 
-export function getArticles(): IArticle[] {
+export function articleServices(): IArticle[] {
 	const fileNames = fs.readdirSync(articlesDirectory);
 	
 	return fileNames.map((fileName) => {
@@ -29,6 +30,7 @@ export function getArticles(): IArticle[] {
 			cover: data.cover || '/default-cover.png', // Default cover if missing
 			links: data.links || [], // Default to empty array if links are missing
 			date: data.date,
+			gallery: data.gallery || [],
 			content
 		};
 	});

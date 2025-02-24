@@ -1,5 +1,6 @@
 import { siteConfig } from '@/config/site';
 import { getAllPosts, getAllProjects } from '@/lib/mdx';
+import { articleServices, IArticle } from '@/lib/ArticleServices';
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -8,15 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
     }));
 
-    const posts = getAllPosts().map((post) => ({
-        url: `${siteConfig.url}/posts/${post.slug}`,
-        lastModified: post.metadata.date,
+    const articles = articleServices().map((article) => ({
+        url: `${siteConfig.url}/articels/${article.slug}`,
+        lastModified: article.date,
     }));
 
-    const projects = getAllProjects().map((projects) => ({
-        url: `${siteConfig.url}/projects/${projects.slug}`,
-        lastModified: new Date(),
-    }));
-
-    return [...routes, ...posts, ...projects];
+    return [...routes, ...articles];
 }

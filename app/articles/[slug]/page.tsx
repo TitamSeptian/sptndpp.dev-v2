@@ -25,7 +25,6 @@ export const generateMetadata = ({ params }: ArticleProps) => {
   if (!article) return;
 
   const { title, description } = article;
-  console.log(article.slug)
 
   return {
     title: `${title} — Articles`,

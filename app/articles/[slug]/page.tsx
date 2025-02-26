@@ -40,7 +40,7 @@ export const generateMetadata = ({ params }: ArticleProps) => {
       authors: siteConfig.nickname,
       images: [
         {
-          url: article.cover,
+          url: `${siteConfig.url}/${article.cover}`,
         },
       ],
     },

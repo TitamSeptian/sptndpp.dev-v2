@@ -25,22 +25,43 @@ export const generateMetadata = ({ params }: ArticleProps) => {
   if (!article) return;
 
   const { title, description } = article;
+  console.log(article.slug)
 
   return {
     title: `${title} — Articles`,
-    description,
+    description: description,
+    url: `${siteConfig.url}/articles/${article.slug}`,
     openGraph: {
-      title,
-      description,
-      type: 'article',
+      title: title,
+      description: description,
+      type: 'website',
+      locale: 'en-US',
+      siteName: title,
       url: `${siteConfig.url}/articles/${article.slug}`,
       authors: siteConfig.nickname,
-      images: article.cover,
+      images: [
+        {
+          url: article.cover,
+        },
+      ],
     },
     twitter: {
-      title,
-      description,
+      title: title,
+      description: description,
       images: article.cover,
+      card: 'summary_large_image',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
     alternates: {
       canonical: `${siteConfig.url}/articles/${article.slug}`,
